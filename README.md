@@ -1,5 +1,5 @@
-My solution to the popular toy robot programming challenge. See [RULES](RULES)
-for the details.
+My solution to the popular toy robot programming challenge. See
+[RULES](RULES.txt) for the details.
 
 To run first install the dependencies:
 
