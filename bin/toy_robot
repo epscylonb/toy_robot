@@ -1,0 +1,36 @@
+#!/usr/bin/env ruby
+
+require './lib/robot.rb'
+
+robot = ToyRobot::Robot.new
+
+puts "Please enter a command"
+
+while STDIN.gets
+  begin
+    case $_
+    when /^PLACE/
+      args = $_.split(" ")
+      if args[1]
+        args = args[1].split(",")
+        if args.size != 3
+          puts "ERROR: PLACE requires 3 arguments"
+        else
+          robot.place(args[0].to_i, args[1].to_i, args[2].to_sym)
+        end
+      else
+        puts "ERROR: PLACE requires arguments"
+      end
+    when /REPORT/
+      puts robot.report
+    when /MOVE/
+      robot.move
+    when /LEFT/
+      robot.left
+    when /RIGHT/
+      robot.right
+    end 
+  rescue ToyRobot::RobotError => e
+    puts "ERROR: #{e.message}"
+  end
+end
