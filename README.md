@@ -3,14 +3,14 @@ for the details.
 
 To run first install the dependencies:
 
-  bundle install
+        bundle install
 
 Then to run the robot interactively:
 
-  ./bin/toy_robot
+        ./bin/toy_robot
 
 To run the tests:
 
-  rspec
+        rspec
 
 
